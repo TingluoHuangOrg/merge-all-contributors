@@ -56,6 +56,9 @@ async function main(org) {
     Promise.all(getAllContributorsPromises).then(allContributorFiles => {
         const allContributorsDict = allContributorFiles.reduce((result, contributorFile) => {
             if (contributorFile != null) {
+                console.log(JSON.stringify(contributorFile))
+                console.log("TEST............")
+                console.log(JSON.stringify(contributorFile.contributors))
                 for (contributor of contributorFile.contributors) {
                     if (contributor.profile in result) {
                         for (contributionType of contributor.contributions) {
